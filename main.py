@@ -24,8 +24,8 @@ def create_menu():
     print("1. Enter 1 to add item to your list")
     print("2. Enter 2 to remove item from your list" )
     print("3. Enter 3 to mark an item as completed" )
-    print("2. Enter 4 to view your todo list" )
-    print("2. Enter 5 to exit" )
+    print("4. Enter 4 to view your todo list" )
+    print("5. Enter 5 to exit" )
     choice = input("Enter your selection: ")
     return choice
 
