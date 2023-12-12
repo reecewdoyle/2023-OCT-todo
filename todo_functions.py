@@ -13,7 +13,7 @@ def add_todo(file_name):
 
 def remove_todo(file_name):
     print("Remove todo")
-    todo_name = input("Enter a todo that you want to remove: ")
+    todo_name = input("Enter a todo name that you want to remove: ")
     # copy all of the contents of the csv into a new csv
     # while doing this, we constantly check for the condition
     # when we encounter the todo to be removed, we don't copy that one
@@ -30,6 +30,19 @@ def remove_todo(file_name):
 
 def mark_todo(file_name):
     print("Mark todo")
+    todo_name = input("Enter the todo name that you want to mark as complete: ")
+    todo_lists = []
+    with open (file_name, "r") as f:
+        reader = csv.reader(f)
+        for row in reader:
+            if (todo_name != row[0]):
+                todo_lists.append(row)
+            else:
+                todo_lists.append([row[0], "True"])
+    with open(file_name, "w") as f:
+        writer = csv.writer(f)
+        writer.writerows(todo_lists)
+
 
 def view_todo(file_name):
     print("View todo")
